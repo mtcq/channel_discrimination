@@ -1,4 +1,4 @@
-## Code to accompany *[Strict hierarchy between parallel, sequential, and indefinite-causal-order strategies for channel discrimination](https://arxiv.org/abs/xxx)*
+## Code to accompany: *[Strict hierarchy between parallel, sequential, and indefinite-causal-order strategies for channel discrimination](https://arxiv.org/abs/xxx)*
 #### Jessica Bavaresco, Mio Murao, and Marco Túlio Quintino
 
 This is a repository for the code used to calculate the numerical results presented in the article "*Strict hierarchy between parallel, sequential, and indefinite-causal-order strategies for channel discrimination*, Jessica Bavaresco, Mio Murao , Marco Túlio Quintino, [arXiv:xxx](https://arxiv.org/abs/xxx)".
