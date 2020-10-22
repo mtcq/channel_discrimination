@@ -1,0 +1,258 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9715,        250]
+NotebookOptionsPosition[      9406,        236]
+NotebookOutlinePosition[      9760,        252]
+CellTagsIndexPosition[      9717,        249]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Mathematica", " ", "Notebook", " ", "that", " ", "loads", " ", "Matlab", 
+    " ", "variables", " ", "used", " ", "for", " ", "the", " ", 
+    RowBox[{"problem", ".", "\[IndentingNewLine]", "Here"}], " ", "we", " ", 
+    "assume", " ", "that", " ", "the", " ", "folder", " ", "MatlabVariables", 
+    " ", "is", " ", "in", " ", "the", " ", "same", " ", "directory", " ", 
+    "of", " ", "this", " ", 
+    RowBox[{"notebook", ".", "\[IndentingNewLine]", "Be"}], " ", "sure", " ", 
+    "that", " ", "the", " ", "folder", " ", "MatlabVariables", " ", "is", " ",
+     "the", " ", "Path", " ", "before", " ", "running", " ", "this", " ", 
+    RowBox[{"cell", ".", "\[IndentingNewLine]", "Before"}], " ", "running", 
+    " ", "this", " ", "notbook", " ", "be", " ", "sure", " ", "that", " ", 
+    "the", " ", "\"\<QI Mathematica Package\>\"", " ", "is", " ", 
+    RowBox[{"loaded", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SetDirectory", "[", 
+     RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"AppendTo", "[", 
+     RowBox[{"$Path", ",", "\"\<MatlabChannelDiscriminationVariables\>\""}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"DecimalPrecision", "=", "9"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dIn", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dOut", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"AmplitudeDamping", "[", "\[Gamma]_", "]"}], ":=", " ", 
+     RowBox[{"ChoiState", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+           {"1", "0"},
+           {"0", 
+            RowBox[{"\[Sqrt]", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", "\[Gamma]"}], ")"}]}]}
+          }], "\[NoBreak]", ")"}], ",", 
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+           {"0", 
+            RowBox[{"\[Sqrt]", "\[Gamma]"}]},
+           {"0", "0"}
+          }], "\[NoBreak]", ")"}]}], "}"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"IdChannel", "[", "d_", "]"}], ":=", 
+     RowBox[{"ChoiState", "[", 
+      RowBox[{"{", 
+       RowBox[{"IdentityMatrix", "[", "d", "]"}], "}"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"XChannel", ":=", 
+     RowBox[{"ChoiState", "[", 
+      RowBox[{"{", 
+       RowBox[{"(", "\[NoBreak]", GridBox[{
+          {"0", "1"},
+          {"1", "0"}
+         }], "\[NoBreak]", ")"}], "}"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"BitFlip", "[", "\[Eta]_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"\[Eta]", " ", 
+       RowBox[{"IdChannel", "[", "2", "]"}]}], " ", "+", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", "\[Eta]"}], ")"}], " ", "XChannel"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"C1", "=", 
+     RowBox[{"AmplitudeDamping", "[", 
+      FractionBox[
+       StyleBox["67", "Code"], "100"], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{"C2", "=", 
+     RowBox[{"BitFlip", "[", 
+      FractionBox[
+       StyleBox["87", "Code"], "100"], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"pUpperParMatlab", "=", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<pUpperPar.mat\>\"", "]"}], ",", "1", ",", 
+       "1", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CUpperParMatlab", "=", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<WbarPar.mat\>\"", "]"}], ",", "1"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"pUpperSeqMatlab", "=", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<pUpperSeq.mat\>\"", "]"}], ",", "1", ",", 
+       "1", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CUpperSeqMatlab", "=", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<WbarSeq.mat\>\"", "]"}], ",", "1"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"pUpperGenMatlab", "=", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<pUpperGen.mat\>\"", "]"}], ",", "1", ",", 
+       "1", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CUpperGenMatlab", "=", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<WbarGen.mat\>\"", "]"}], ",", "1"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"TParMatlab", " ", "=", " ", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<TPar.mat\>\"", "]"}], ",", "1"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"TSeqMatlab", " ", "=", " ", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<TSeq.mat\>\"", "]"}], ",", "1"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"TGenMatlab", " ", "=", " ", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<TGen.mat\>\"", "]"}], ",", "1"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"pUpperSepMatlab", "=", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<pUpperSep.mat\>\"", "]"}], ",", "1", ",", 
+       "1", ",", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CUpperSepMatlab", "=", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<WbarSep.mat\>\"", "]"}], ",", "1"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"HMatlab", " ", "=", " ", 
+     RowBox[{"CUpperSepMatlab", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CUpperSepMatlab1", "=", 
+     RowBox[{"CUpperSepMatlab", "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CUpperSepMatlab2", "=", 
+     RowBox[{"CUpperSepMatlab", "[", 
+      RowBox[{"[", "3", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"TSepMatlab", " ", "=", " ", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<TSep.mat\>\"", "]"}], ",", "1"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"WSepMatlabFull", "=", 
+     RowBox[{"Part", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", "\"\<WSep.mat\>\"", "]"}], ",", "1"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"WAMatlab", "=", 
+     RowBox[{"WSepMatlabFull", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"WBMatlab", "=", 
+     RowBox[{"WSepMatlabFull", "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"WSepMatlab", "=", 
+     RowBox[{"WAMatlab", " ", "+", " ", "WBMatlab"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.811763344758716*^9, 3.811763422914691*^9}, {
+   3.8118200365891457`*^9, 3.8118200377756577`*^9}, 3.811820727673957*^9, {
+   3.8118318429524517`*^9, 3.81183185552872*^9}, {3.811831924505252*^9, 
+   3.8118319295972424`*^9}, 3.811832571590005*^9, {3.811832648237144*^9, 
+   3.8118326571980047`*^9}, {3.811838086023121*^9, 3.81183815778692*^9}, {
+   3.811839863436928*^9, 3.811839876549554*^9}, {3.811846735632695*^9, 
+   3.811846748737753*^9}, {3.811853715508217*^9, 3.811853771630538*^9}, {
+   3.811853808534112*^9, 3.811853808703741*^9}, {3.812024280973053*^9, 
+   3.812024294603037*^9}, {3.812093789724474*^9, 3.812093795687241*^9}, {
+   3.812094172848179*^9, 3.812094179774399*^9}, {3.812095477370401*^9, 
+   3.812095480695524*^9}, {3.812095578208859*^9, 3.81209561427724*^9}, {
+   3.812095964115181*^9, 3.812095985603488*^9}, {3.812196826069893*^9, 
+   3.812196905372877*^9}, {3.812249964394764*^9, 3.812250049917378*^9}, {
+   3.812250088546183*^9, 3.81225008970752*^9}, {3.8122501708906097`*^9, 
+   3.812250171984477*^9}, {3.812255147050144*^9, 3.812255226073111*^9}, {
+   3.8122553810879583`*^9, 3.8122554469958*^9}, {3.812351458881073*^9, 
+   3.812351568159854*^9}, {3.812351644411665*^9, 3.8123516451326714`*^9}, {
+   3.812351682840973*^9, 3.812351683874099*^9}, {3.812351970547574*^9, 
+   3.812351970844154*^9}, {3.812352002833315*^9, 3.8123520661506453`*^9}, {
+   3.812352110334303*^9, 3.812352113589116*^9}, {3.81235217419799*^9, 
+   3.8123522344001637`*^9}, {3.8123522832673473`*^9, 3.812352342891307*^9}},
+ CellLabel->
+  "In[236]:=",ExpressionUUID->"51747199-09b8-4f76-bb71-1fb3e9bad582"]
+},
+WindowSize->{1920, 1016},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification->1.5,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 8844, 214, 1670, "Input",ExpressionUUID->"51747199-09b8-4f76-bb71-1fb3e9bad582"]
+}
+]
+*)
+
