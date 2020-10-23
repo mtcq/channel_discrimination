@@ -1,5 +1,5 @@
 function  out = TR(X,positions,DIM)
-% Function that implementes the trace and replace map:
+% Function that implements the trace and replace map:
 % That is, traces out the systems described in positions and replace it by
 % normalised identity operators.
 % For instance, the trace and replace in position l is given by
