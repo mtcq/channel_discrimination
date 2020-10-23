@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     60277,       1575]
-NotebookOptionsPosition[     59966,       1561]
-NotebookOutlinePosition[     60320,       1577]
-CellTagsIndexPosition[     60277,       1574]
+NotebookDataLength[     55812,       1454]
+NotebookOptionsPosition[     55501,       1440]
+NotebookOutlinePosition[     55855,       1456]
+CellTagsIndexPosition[     55812,       1453]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,7 +26,7 @@ Cell[BoxData[
     "Mathematica", " ", "Notebook", " ", "that", " ", "loads", " ", 
      "important", " ", 
      RowBox[{"functions", ".", "\[IndentingNewLine]", "Before"}], " ", 
-     "running", " ", "this", " ", "notbook", " ", "be", " ", "sure", " ", 
+     "running", " ", "this", " ", "notebook", " ", "be", " ", "sure", " ", 
      "that", " ", "the", " ", "\"\<QI Mathematica Package\>\"", " ", "is", 
      " ", 
      RowBox[{"loaded", ".", "\[IndentingNewLine]", " ", "Note"}], " ", "that",
@@ -232,20 +232,16 @@ Cell[BoxData[
    RowBox[{"(*", " ", 
     RowBox[{
      RowBox[{
-      RowBox[{
-      "Function", " ", "that", " ", "makes", " ", "the", " ", "input", " ", 
-       "Self"}], "-", 
-      RowBox[{
-      "Adjoint", " ", "matrix", " ", "positive", " ", "by", " ", "adding", 
-       " ", "white", " ", "noise"}]}], ",", "\[IndentingNewLine]", 
+     "Function", " ", "that", " ", "makes", " ", "the", " ", "input", " ", 
+      "matrix", " ", "positive", " ", "by", " ", "adding", " ", "white", " ", 
+      
+      RowBox[{"noise", ".", "\[IndentingNewLine]", "The"}], " ", "output", 
+      " ", "is", " ", "\[Eta]", " ", "X"}], " ", "+", " ", 
      RowBox[{
-      RowBox[{"The", " ", "output", " ", "is", " ", "\[Eta]", " ", "X"}], " ",
-       "+", " ", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{"1", "-", "\[Eta]"}], ")"}], " ", "I", " ", "for", " ", 
-       "some", " ", "value", " ", "of", " ", "\[Eta]", " ", "that", " ", 
-       "ensures", " ", "positivity"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", "\[Eta]"}], ")"}], " ", "I", " ", "for", " ", "some",
+       " ", "value", " ", "of", " ", "\[Eta]", " ", "that", " ", "ensures", 
+      " ", "positivity"}]}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"MakePositive", "[", "X_", "]"}], ":=", 
     RowBox[{"(", " ", 
@@ -362,123 +358,6 @@ Cell[BoxData[
                     RowBox[{"--", 
                     RowBox[{"--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
     "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", 
-           RowBox[{"--", 
-            RowBox[{"--", 
-             RowBox[{"--", 
-              RowBox[{"--", " ", "FUNCTIONS"}]}]}]}]}]}]}]}]}]}], " ", "FOR", 
-     " ", "QUANTUM", " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"CHANNELS", " ", "--"}], "--"}], "--"}], "--"}], 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", "--"}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-    "Function", " ", "that", " ", "projects", " ", "an", " ", "operator", " ",
-      "into", " ", "the", " ", "subspace", " ", "spanned", " ", "by", " ", 
-     "valid", " ", "Channels"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"ProjectChannel", "[", "C_", "]"}], ":=", 
-     RowBox[{"C", " ", "-", " ", 
-      RowBox[{"TR", "[", 
-       RowBox[{"C", ",", 
-        RowBox[{"{", "2", "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"dIn", ",", "dOut"}], "}"}]}], "]"}], "+", 
-      RowBox[{"TR", "[", 
-       RowBox[{"C", ",", 
-        RowBox[{"{", 
-         RowBox[{"1", ",", "2"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"dIn", ",", "dOut"}], "}"}]}], "]"}]}]}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-    "Function", " ", "that", " ", "outputs", " ", "a", " ", "valid", " ", 
-     "Quantum", " ", "Channel", " ", "as", " ", "Algorithm", " ", "1"}], 
-    "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"ChannelOK", "[", "C_", "]"}], ":=", 
-    RowBox[{"(", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"COK1", "=", 
-       RowBox[{"Truncate", "[", 
-        RowBox[{"C", ",", "DecimalPrecision"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"COK2", "=", 
-       RowBox[{"GetSelfAdjoint", "[", "COK1", "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"COK3", "=", 
-       RowBox[{"ProjectChannel", "[", "COK2", "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"COK4", "=", 
-       RowBox[{"MakePositive", "[", "COK3", "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"COK", "=", 
-       RowBox[{
-        FractionBox[
-         StyleBox[
-          RowBox[{"COK4", " "}], "Code"], 
-         RowBox[{"Tr", "[", "COK4", "]"}]], "  ", "dOut"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"Return", "[", "COK", "]"}], ";"}], ")"}]}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-    "Function", " ", "that", " ", "tests", " ", "if", " ", "C", " ", "is", 
-     " ", "a", " ", "valid", " ", "Channel"}], "*)"}], "\[IndentingNewLine]", 
-   
-   RowBox[{
-    RowBox[{"IsValidChannel", "[", "C_", "]"}], ":=", 
-    RowBox[{"(", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"PositiveSemidefiniteMatrixQ", "[", "C", "]"}], ",", 
-        RowBox[{
-        "Print", "[", "\"\<The map is completely positive.\>\"", "]"}], ",", 
-        " ", 
-        RowBox[{
-        "Print", "[", "\"\<The map is NOT completely positive.\>\"", "]"}]}], 
-       "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"PartialTrace", "[", 
-          RowBox[{"C", ",", "dIn", ",", "dOut", ",", "2"}], "]"}], "\[Equal]", 
-         RowBox[{"IdentityMatrix", "[", "dIn", "]"}]}], ",", 
-        RowBox[{"Print", "[", "\"\<The map is trace-preserving.\>\"", "]"}], 
-        ",", " ", 
-        RowBox[{
-        "Print", "[", "\"\<The map is NOT trace-preserving.\>\"", "]"}]}], 
-       "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", 
-       RowBox[{
-       "\"\<The numerical evaluation of the eigenvalues is:  \>\"", ",", 
-        RowBox[{"MatrixForm", "[", 
-         RowBox[{"Eigenvalues", "[", 
-          RowBox[{"N", "[", "C", "]"}], "]"}], "]"}]}], "]"}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"Print", "[", 
-       RowBox[{"\"\<The partial trace on the output space is:  \>\"", ",", 
-        RowBox[{"MatrixForm", "[", 
-         RowBox[{"PartialTrace", "[", 
-          RowBox[{"C", ",", "dIn", ",", "dOut", ",", "2"}], "]"}], "]"}]}], 
-       "]"}], ";"}], ")"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
      RowBox[{"--", 
@@ -1484,7 +1363,7 @@ Cell[BoxData[
            RowBox[{"dOut", "^", "2"}]}]}]}], "]"}], ";", 
        "\[IndentingNewLine]", 
        RowBox[{"Return", "[", "TOK", "]"}], ";"}], "\[IndentingNewLine]", 
-      ")"}]}], ";"}], "\[IndentingNewLine]"}]}]], "Input",
+      ")"}]}], ";"}]}]}]], "Input",
  CellChangeTimes->{{3.811677788850308*^9, 3.8116777973948517`*^9}, 
    3.811678432373704*^9, {3.8116784751029453`*^9, 3.811678561160172*^9}, {
    3.811678672265545*^9, 3.811678784517117*^9}, {3.811678976809754*^9, 
@@ -1555,9 +1434,9 @@ Cell[BoxData[
    3.812250103009616*^9, 3.8122501441550627`*^9}, {3.812251466536971*^9, 
    3.8122514736702147`*^9}, {3.812251749978045*^9, 3.812251755321067*^9}, {
    3.812255014782835*^9, 3.812255112439542*^9}, {3.8122553678887157`*^9, 
-   3.8122553681147947`*^9}},
- CellLabel->
-  "In[266]:=",ExpressionUUID->"54a2c935-05a2-4956-b6b6-4d1cba66aefa"]
+   3.8122553681147947`*^9}, 3.812414695952025*^9, {3.81241473027938*^9, 
+   3.812414812518124*^9}},ExpressionUUID->"54a2c935-05a2-4956-b6b6-\
+4d1cba66aefa"]
 },
 WindowSize->{1920, 1016},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
@@ -1576,7 +1455,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 59404, 1539, 9541, "Input",ExpressionUUID->"54a2c935-05a2-4956-b6b6-4d1cba66aefa"]
+Cell[558, 20, 54939, 1418, 8664, "Input",ExpressionUUID->"54a2c935-05a2-4956-b6b6-4d1cba66aefa"]
 }
 ]
 *)

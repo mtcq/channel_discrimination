@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9715,        250]
-NotebookOptionsPosition[      9406,        236]
-NotebookOutlinePosition[      9760,        252]
-CellTagsIndexPosition[      9717,        249]
+NotebookDataLength[      9793,        252]
+NotebookOptionsPosition[      9484,        238]
+NotebookOutlinePosition[      9838,        254]
+CellTagsIndexPosition[      9795,        251]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,14 +25,15 @@ Cell[BoxData[
    "Mathematica", " ", "Notebook", " ", "that", " ", "loads", " ", "Matlab", 
     " ", "variables", " ", "used", " ", "for", " ", "the", " ", 
     RowBox[{"problem", ".", "\[IndentingNewLine]", "Here"}], " ", "we", " ", 
-    "assume", " ", "that", " ", "the", " ", "folder", " ", "MatlabVariables", 
-    " ", "is", " ", "in", " ", "the", " ", "same", " ", "directory", " ", 
-    "of", " ", "this", " ", 
+    "assume", " ", "that", " ", "the", " ", "folder", " ", 
+    "MatlabChannelDiscriminationVariables", " ", "is", " ", "in", " ", "the", 
+    " ", "same", " ", "directory", " ", "of", " ", "this", " ", 
     RowBox[{"notebook", ".", "\[IndentingNewLine]", "Be"}], " ", "sure", " ", 
-    "that", " ", "the", " ", "folder", " ", "MatlabVariables", " ", "is", " ",
-     "the", " ", "Path", " ", "before", " ", "running", " ", "this", " ", 
+    "that", " ", "the", " ", "folder", " ", 
+    "MatlabChannelDiscriminationVariables", " ", "is", " ", "the", " ", 
+    "Path", " ", "before", " ", "running", " ", "this", " ", 
     RowBox[{"cell", ".", "\[IndentingNewLine]", "Before"}], " ", "running", 
-    " ", "this", " ", "notbook", " ", "be", " ", "sure", " ", "that", " ", 
+    " ", "this", " ", "notebook", " ", "be", " ", "sure", " ", "that", " ", 
     "the", " ", "\"\<QI Mathematica Package\>\"", " ", "is", " ", 
     RowBox[{"loaded", "."}]}], "*)"}], "\[IndentingNewLine]", 
   "\[IndentingNewLine]", 
@@ -230,9 +231,10 @@ Cell[BoxData[
    3.812351682840973*^9, 3.812351683874099*^9}, {3.812351970547574*^9, 
    3.812351970844154*^9}, {3.812352002833315*^9, 3.8123520661506453`*^9}, {
    3.812352110334303*^9, 3.812352113589116*^9}, {3.81235217419799*^9, 
-   3.8123522344001637`*^9}, {3.8123522832673473`*^9, 3.812352342891307*^9}},
- CellLabel->
-  "In[236]:=",ExpressionUUID->"51747199-09b8-4f76-bb71-1fb3e9bad582"]
+   3.8123522344001637`*^9}, {3.8123522832673473`*^9, 3.812352342891307*^9}, {
+   3.812414833634791*^9, 
+   3.8124148501376657`*^9}},ExpressionUUID->"51747199-09b8-4f76-bb71-\
+1fb3e9bad582"]
 },
 WindowSize->{1920, 1016},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
@@ -251,7 +253,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 8844, 214, 1670, "Input",ExpressionUUID->"51747199-09b8-4f76-bb71-1fb3e9bad582"]
+Cell[558, 20, 8922, 216, 1613, "Input",ExpressionUUID->"51747199-09b8-4f76-bb71-1fb3e9bad582"]
 }
 ]
 *)
