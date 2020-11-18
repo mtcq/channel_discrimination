@@ -1,7 +1,7 @@
 ## Code to accompany: *[Strict hierarchy between parallel, sequential, and indefinite-causal-order strategies for channel discrimination](https://arxiv.org/abs/xxx)*
 #### Jessica Bavaresco, Mio Murao, and Marco Túlio Quintino
 
-This is a repository for the code used to calculate the numerical results presented in the article "*Strict hierarchy between parallel, sequential, and indefinite-causal-order strategies for channel discrimination*, Jessica Bavaresco, Mio Murao, and Marco Túlio Quintino, [arXiv:xxx](https://arxiv.org/abs/xxx)".
+This is a repository for the code used to calculate the numerical results presented in the article "*Strict hierarchy between parallel, sequential, and indefinite-causal-order strategies for channel discrimination*, Jessica Bavaresco, Mio Murao, and Marco Túlio Quintino, [arXiv:2011.08300](https://arxiv.org/abs/2011.08300)".
 
  MATLAB code requires:
 - [cvx](http://cvxr.com/) - a free MATLAB toolbox for rapid prototyping of optimization problems
