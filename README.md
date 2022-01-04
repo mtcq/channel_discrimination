@@ -27,7 +27,7 @@ The user may impose the restrictions of Parallel, Sequential, Separable, or Gene
 Function that implements the trace-and-replace map on matrices.
 
 
-The MATLAB code of this repository is: 
+The MATHEMATICA code of this repository is: 
 
 - [LoadVariables.nb](https://github.com/mtcq/channel_discrimination/blob/main/ChannelDiscrimination/LoadVariables.nb):
 Notebook used to load important variables.
